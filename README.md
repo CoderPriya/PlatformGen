@@ -1,2 +1,2 @@
 # PlatformGen
-PlatformGen is a multi-agent AI platform for modern software delivery.
+PlatformGen is an enterprised multi-agent AI platform designed to accelerate the complete software development lifecycle through intelligent automation, agentic workflows, and enterprise-grade governance. It helps transform business ideas into production-ready software by assisting with requirements analysis, architecture design, task planning, code generation, testing, security validation, deployment workflows, and operational feedback loops. PlatformGen is built to combine developer productivity, platform engineering discipline, and autonomous AI capabilities in a controlled, auditable, and scalable way.
