@@ -1,8 +1,8 @@
 # PlatformGen : Autonomous Multi-Agent SDLC Platform
 PlatformGen is an enterprised multi-agent AI platform designed to accelerate the complete software development lifecycle through intelligent automation, agentic workflows, and enterprise-grade governance. It helps transform business ideas into production-ready software by assisting with requirements analysis, architecture design, task planning, code generation, testing, security validation, deployment workflows, and operational feedback loops. PlatformGen is built to combine developer productivity, platform engineering discipline, and autonomous AI capabilities in a controlled, auditable, and scalable way.
 
-
-A proof-of-concept implementation of an **Autonomous Multi-Agent System for End-to-End Enterprise SDLC**, based on the architecture design document.
+**=============================================================================================================================================================================**
+A proof-of-concept implementation of an **Autonomous Multi-Agent System for End-to-End Enterprise SDLC**.
 
 ## What This Is
 
@@ -189,4 +189,3 @@ When no LLM API key is configured, the platform runs in **mock mode** — genera
 ## License
 
 Confidential — Internal use only.
->>>>>>> 21465e5 (Initial Commit for POC)
