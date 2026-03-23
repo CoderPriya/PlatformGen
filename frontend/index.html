@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Multi-Agent SDLC Platform</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <div id="app">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-left">
+        <div class="logo">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+            <rect width="28" height="28" rx="6" fill="#6366f1"/>
+            <path d="M8 14l4 4 8-8" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <h1>SDLC Platform</h1>
+        </div>
+        <span class="badge badge-live" id="health-badge">Connecting...</span>
+      </div>
+      <nav class="nav">
+        <button class="nav-btn active" data-tab="dashboard">Dashboard</button>
+        <button class="nav-btn" data-tab="workflows">Workflows</button>
+        <button class="nav-btn" data-tab="approvals">Approvals</button>
+        <button class="nav-btn" data-tab="agents">Agents</button>
+        <button class="nav-btn" data-tab="events">Event Log</button>
+        <button class="nav-btn" data-tab="gateway">Tool Gateway</button>
+      </nav>
+    </header>
+
+    <!-- Dashboard Tab -->
+    <main id="tab-dashboard" class="tab-content active">
+      <div class="stats-grid" id="stats-grid"></div>
+
+      <div class="two-col">
+        <section class="card">
+          <h2>Active Workflows</h2>
+          <div id="dash-workflows" class="scroll-list"></div>
+        </section>
+        <section class="card">
+          <h2>Pending Approvals</h2>
+          <div id="dash-approvals" class="scroll-list"></div>
+        </section>
+      </div>
+
+      <section class="card">
+        <h2>Recent Events</h2>
+        <div id="dash-events" class="scroll-list"></div>
+      </section>
+    </main>
+
+    <!-- Workflows Tab -->
+    <main id="tab-workflows" class="tab-content">
+      <div class="card">
+        <h2>Create New Workflow</h2>
+        <form id="create-workflow-form" class="form-grid">
+          <div class="form-group">
+            <label for="wf-title">Title</label>
+            <input type="text" id="wf-title" placeholder="e.g. Customer Onboarding Service" required />
+          </div>
+          <div class="form-group">
+            <label for="wf-project">Project Name</label>
+            <input type="text" id="wf-project" placeholder="e.g. onboarding-svc" required />
+          </div>
+          <div class="form-group full-width">
+            <label for="wf-brief">Business Brief</label>
+            <textarea id="wf-brief" rows="5" placeholder="Describe the business need, target users, key requirements..." required></textarea>
+          </div>
+          <div class="form-group full-width">
+            <label for="wf-desc">Description (optional)</label>
+            <textarea id="wf-desc" rows="2" placeholder="Additional context..."></textarea>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Create & Run Workflow</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="card">
+        <h2>All Workflows</h2>
+        <div id="workflows-list"></div>
+      </div>
+    </main>
+
+    <!-- Workflow Detail (hidden by default) -->
+    <main id="tab-workflow-detail" class="tab-content">
+      <button class="btn btn-secondary back-btn" onclick="showTab('workflows')">&larr; Back to Workflows</button>
+      <div id="workflow-detail-content"></div>
+    </main>
+
+    <!-- Approvals Tab -->
+    <main id="tab-approvals" class="tab-content">
+      <div class="card">
+        <h2>Approval Gates</h2>
+        <div id="approvals-list"></div>
+      </div>
+    </main>
+
+    <!-- Agents Tab -->
+    <main id="tab-agents" class="tab-content">
+      <div class="card">
+        <h2>Agent Registry</h2>
+        <div id="agents-grid" class="agents-grid"></div>
+      </div>
+    </main>
+
+    <!-- Events Tab -->
+    <main id="tab-events" class="tab-content">
+      <div class="card">
+        <h2>Event Bus Log</h2>
+        <div id="events-table"></div>
+      </div>
+    </main>
+
+    <!-- Tool Gateway Tab -->
+    <main id="tab-gateway" class="tab-content">
+      <div class="two-col">
+        <section class="card">
+          <h2>Tool Manifests</h2>
+          <div id="manifests-content"></div>
+        </section>
+        <section class="card">
+          <h2>Audit Log</h2>
+          <div id="audit-log"></div>
+        </section>
+      </div>
+
+      <div class="card">
+        <h2>Test Tool Invocation</h2>
+        <form id="tool-invoke-form" class="form-grid">
+          <div class="form-group">
+            <label for="tool-agent">Agent</label>
+            <select id="tool-agent"></select>
+          </div>
+          <div class="form-group">
+            <label for="tool-name">Tool Name</label>
+            <input type="text" id="tool-name" placeholder="e.g. jira.create_epic" />
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Invoke Tool</button>
+          </div>
+        </form>
+        <pre id="tool-result" class="code-block"></pre>
+      </div>
+    </main>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
